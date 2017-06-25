@@ -28,14 +28,14 @@ $config['hybridauth'] = array(
       "keys" => array("id" => "", "secret" => ""),
     ),
     "Facebook" => array(
-      "enabled" => TRUE,
-      "keys" => array("id" => "670386846478453", "secret" => "4095fc18aa7f98d312df509863f4c521"),
-      "trustForwarded" => false,
+      "enabled" => FALSE,
+      "keys" => array("id" => "", "secret" => ""),
+      "trustForwarded" => FALSE,
     ),
     "Twitter" => array(
       "enabled" => FALSE,
       "keys" => array("key" => "", "secret" => ""),
-      "includeEmail" => false,
+      "includeEmail" => FALSE,
     ),
     "Live" => array(
       "enabled" => FALSE,

@@ -6,7 +6,8 @@ class Hauth extends CI_Controller {
   /**
    * {@inheritdoc}
    */
-  public function __construct() {
+  public function __construct()
+  {
     parent::__construct();
 
     $this->load->helper('url');
@@ -20,7 +21,8 @@ class Hauth extends CI_Controller {
   {
     // Build a list of enabled providers.
     $providers = array();
-    foreach ($this->hybridauth->HA->getProviders() as $provider_id => $params) {
+    foreach ($this->hybridauth->HA->getProviders() as $provider_id => $params)
+    {
       $providers[] = anchor("hauth/window/{$provider_id}", $provider_id);
     }
 
@@ -34,14 +36,16 @@ class Hauth extends CI_Controller {
    *
    * @param string $provider_id Define provider to login.
    */
-  public function window($provider_id) {
+  public function window($provider_id)
+  {
     $params = array(
       'hauth_return_to' => site_url("hauth/window/{$provider_id}"),
     );
     if (isset($_REQUEST['openid_identifier'])) {
       $params['openid_identifier'] = $_REQUEST['openid_identifier'];
     }
-    try {
+    try
+    {
       $adapter = $this->hybridauth->HA->authenticate($provider_id, $params);
       $profile = $adapter->getUserProfile();
 
@@ -49,7 +53,8 @@ class Hauth extends CI_Controller {
         'profile' => $profile,
       ));
     }
-    catch (Exception $e) {
+    catch (Exception $e)
+    {
       show_error($e->getMessage());
     }
   }
@@ -57,7 +62,8 @@ class Hauth extends CI_Controller {
   /**
    * Handle the OpenID and OAuth endpoint.
    */
-  public function endpoint() {
+  public function endpoint()
+  {
     $this->hybridauth->process();
   }
 
