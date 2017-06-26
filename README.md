@@ -6,19 +6,67 @@ HybridAuth library for CodeIgniter 3.x
 - [CodeIgniter 3.x](https://www.codeigniter.com)
 
 ## Installation
-1. Download [HybridAuth library](https://github.com/hybridauth/hybridauth/releases) and unpack it into `application/third_party/hybridauth` folder; for recent library versions you also need to install composer dependencies - either execute `composer install` in the library directory or use composer dependency management approach suitable for your project
-2. Copy these files into your project
+If you're familiar with [composer](https://getcomposer.org) (recommended :+1:):
+- go to `application` and run the following command:
+```
+composer require hybridauth/hybridauth
+```
+- then, go to `application/config.php` and set `composer_autoload` to `TRUE`:
+```php
+$config['composer_autoload'] = TRUE;
+```
+Alternatively, you can:
+- download [HybridAuth library](https://github.com/hybridauth/hybridauth/releases)
+- unpack the library into `application/third_party/hybridauth` folder
+- run `composer install` in the library directory (_application/third_party/hybridauth_)
+
+Ok, now copy these files into your project
 ```
 application/config/hybridauth.php
 application/libraries/Hybridauth.php
 application/controllers/Hauth.php
+application/views/hauth
 ```
-3. Configure the providers inside the `application/config/hybridauth.php` file
+
+OK, now let's set `http://<yourdomain.com>/index.php/hauth/endpoint?hauth_done=<Provider ID>` as valid `Callback URL` in your provider application.
+
+_e.g for Facebook provider:_
+- go to `https://developers.facebook.com/apps/YOUR_APP/fb-login`
+- put `http://<yourdomain.com>/index.php/hauth/endpoint?hauth_done=Facebook` as `Valid OAuth redirect URIs`
+
+Finally, configure the providers inside the `application/config/hybridauth.php` file
+- To make correct providers configuration please visit the [HybridAuth documentation](hybridauth.github.io/hybridauth)
+
+:tada: :tada: :tada:
+
+## Quick Start
+- Visit `http://<yourdomain.com>/index.php/hauth` to see enabled providers.
+- Modify `Hauth` controller to your fits.
 
 ## How to use
-Visit `http://<yourdomain.com>/index.php/hauth` to see enabled providers.
+First, you should load HA library into the system
+```php
+$this->load->library('hybridauth');
+```
+To create a login link you can use
+```php
+anchor('hauth/window/Facebook', 'Facebook');
+```
+Or just put this link to your html code.
+```html
+<a href="http://www.example.com/index.php/hauth/window/Facebook">Log in with Facebook</a>
+```
+To access HA instance use `$this->hybridauth->HA`
+```php
+// Login into facebook.
+$adapter = $this->hybridauth->HA->authenticate('Facebook');
+// Get user profile.
+$profile = $adapter->getUserProfile();
+```
 
-_p.s. to be done_
+It's recommended to use Hauth controller (_/index.php/hauth_).
 
-## Examples
-- To be done.
+## To be done
+- [ ] Add support for HA 3.x
+- [ ] Add more demos / examples
+- [ ] Integrate with other libraries which provide User System.

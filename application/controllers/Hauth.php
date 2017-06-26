@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Hauth Controller Class
+ */
 class Hauth extends CI_Controller {
 
   /**
@@ -34,14 +37,15 @@ class Hauth extends CI_Controller {
   /**
    * Try to authenticate the user with a given provider
    *
-   * @param string $provider_id Define provider to login.
+   * @param string $provider_id Define provider to login
    */
   public function window($provider_id)
   {
     $params = array(
       'hauth_return_to' => site_url("hauth/window/{$provider_id}"),
     );
-    if (isset($_REQUEST['openid_identifier'])) {
+    if (isset($_REQUEST['openid_identifier']))
+    {
       $params['openid_identifier'] = $_REQUEST['openid_identifier'];
     }
     try
@@ -60,7 +64,7 @@ class Hauth extends CI_Controller {
   }
 
   /**
-   * Handle the OpenID and OAuth endpoint.
+   * Handle the OpenID and OAuth endpoint
    */
   public function endpoint()
   {
