@@ -35,7 +35,7 @@ _e.g for Facebook provider:_
 - put `http://<yourdomain.com>/index.php/hauth/endpoint?hauth_done=Facebook` as `Valid OAuth redirect URIs`
 
 Finally, configure the providers inside the `application/config/hybridauth.php` file
-- To make correct providers configuration please visit the [HybridAuth documentation](hybridauth.github.io/hybridauth)
+- To make correct configuration for providers please visit the [HybridAuth documentation](https://hybridauth.github.io/hybridauth)
 
 :tada: :tada: :tada:
 
