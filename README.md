@@ -20,7 +20,7 @@ Alternatively, you can:
 - unpack the library into `application/third_party/hybridauth` folder
 - run `composer install` in the library directory (_application/third_party/hybridauth_)
 
-Ok, now copy these files into your project
+Ok, now copy these files into your project:
 ```
 application/config/hybridauth.php
 application/libraries/Hybridauth.php
@@ -28,7 +28,7 @@ application/controllers/Hauth.php
 application/views/hauth
 ```
 
-OK, now let's set `http://<yourdomain.com>/index.php/hauth/endpoint?hauth_done=<Provider ID>` as valid `Callback URL` in your provider application.
+OK, now let's put `http://<yourdomain.com>/index.php/hauth/endpoint?hauth_done=<Provider ID>` as valid `Callback URL` in your provider application.
 
 _e.g for Facebook provider:_
 - go to `https://developers.facebook.com/apps/YOUR_APP/fb-login`

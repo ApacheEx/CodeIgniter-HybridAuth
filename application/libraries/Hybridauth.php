@@ -71,7 +71,7 @@ class Hybridauth {
   /**
    * Initialize HA library
    *
-   * @param string $class_name Define HA class to load
+   * @param string $class_name The class name to initialize
    *
    * @throws \Exception
    */
@@ -94,7 +94,7 @@ class Hybridauth {
       require_once FCPATH . 'vendor/autoload.php';
     }
 
-    if (!class_exists('Hybrid_Auth'))
+    if (!class_exists($class_name))
     {
       throw new Exception("Could not load the {$class_name} class.");
     }
