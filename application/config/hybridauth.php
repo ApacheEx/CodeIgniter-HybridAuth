@@ -11,16 +11,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['hybridauth'] = array(
   "providers" => array(
-    // openid providers
     "OpenID" => array(
       "enabled" => FALSE,
     ),
     "Yahoo" => array(
       "enabled" => FALSE,
       "keys" => array("id" => "", "secret" => ""),
-    ),
-    "AOL" => array(
-      "enabled" => FALSE,
     ),
     "Google" => array(
       "enabled" => FALSE,
@@ -36,16 +32,7 @@ $config['hybridauth'] = array(
       "keys" => array("key" => "", "secret" => ""),
       "includeEmail" => FALSE,
     ),
-    "Live" => array(
-      "enabled" => FALSE,
-      "keys" => array("id" => "", "secret" => ""),
-    ),
     "LinkedIn" => array(
-      "enabled" => FALSE,
-      "keys" => array("id" => "", "secret" => ""),
-      "fields" => array(),
-    ),
-    "Foursquare" => array(
       "enabled" => FALSE,
       "keys" => array("id" => "", "secret" => ""),
     ),
