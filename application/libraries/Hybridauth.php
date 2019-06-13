@@ -40,7 +40,7 @@ class Hybridauth {
     $config = $this->CI->config->item('hybridauth');
 
     // Specify base url to HA Controller.
-    $config['base_url'] = $this->CI->config->site_url('hauth/endpoint');
+    $config['base_url'] = $this->CI->config->site_url('index.php/hauth/endpoint');
 
     try
     {
