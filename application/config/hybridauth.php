@@ -7,41 +7,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | -------------------------------------------------------------------------
 | Your HybridAuth config can be specified below.
 |
-| See: https://github.com/hybridauth/hybridauth/blob/v2/hybridauth/config.php
+| See: https://hybridauth.github.io/developer-ref-user-authentication.html
+|
 */
 $config['hybridauth'] = array(
-  "providers" => array(
-    "OpenID" => array(
-      "enabled" => FALSE,
-    ),
-    "Yahoo" => array(
-      "enabled" => FALSE,
-      "keys" => array("id" => "", "secret" => ""),
-    ),
-    "Google" => array(
-      "enabled" => FALSE,
-      "keys" => array("id" => "", "secret" => ""),
-    ),
-    "Facebook" => array(
-      "enabled" => FALSE,
-      "keys" => array("id" => "", "secret" => ""),
-      "trustForwarded" => FALSE,
-    ),
-    "Twitter" => array(
-      "enabled" => FALSE,
-      "keys" => array("key" => "", "secret" => ""),
-      "includeEmail" => FALSE,
-    ),
-    "LinkedIn" => array(
-      "enabled" => FALSE,
-      "keys" => array("id" => "", "secret" => ""),
-    ),
-  ),
-  // If you want to enable logging, set 'debug_mode' to true.
-  // You can also set it to
-  // - "error" To log only error messages. Useful in production
-  // - "info" To log info and error messages (ignore debug messages)
-  "debug_mode" => ENVIRONMENT === 'development',
-  // Path to file writable by the web server. Required if 'debug_mode' is not false
-  "debug_file" => APPPATH . 'logs/hybridauth.log',
+
+	'callback' => site_url(), // skip validation
+
+	'providers' => array(
+
+		'Twitter' => array(
+			'callback' => site_url('hauth/social/twitter'),
+			'enabled' => TRUE,
+			'keys' => array(
+				'key' => '...',
+				'secret' => '...'
+			),
+			'include_email' => TRUE,
+		),
+
+		'Google'   => ['enabled' => true, 'keys' => ['id'  => '...', 'secret' => '...']],
+		'Facebook' => ['enabled' => true, 'keys' => ['id'  => '...', 'secret' => '...']],
+	),
+
+	/**
+     * Optional: Debug Mode
+     *
+     * The debug mode is set to false by default, however you can rise its level to either 'info', 'debug' or 'error'.
+     *
+     * debug_mode: false|info|debug|error
+     * debug_file: Path to file writeable by the web server. Required if only 'debug_mode' is not false.
+     */
+	'debug_mode' => ENVIRONMENT === 'development',
+	'debug_file' => APPPATH . 'logs/hybridauth.log',
 );
