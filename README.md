@@ -2,7 +2,8 @@
 HybridAuth library for CodeIgniter 3.x
 
 ## Dependencies
-- [HybridAuth 3.x](https://github.com/hybridauth/hybridauth)
+- [HybridAuth 2.x](https://github.com/hybridauth/hybridauth) for `CodeIgniter-HybridAuth v1`
+- [HybridAuth 3.x](https://github.com/hybridauth/hybridauth) for `CodeIgniter-HybridAuth v2`
 - [CodeIgniter 3.x](https://www.codeigniter.com)
 
 ## Installation
