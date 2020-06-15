@@ -20,7 +20,7 @@ Alternatively, you can:
 - download [HybridAuth library](https://github.com/hybridauth/hybridauth/releases)
 - unpack the library into `application/third_party/hybridauth` folder
 
-Ok, now copy these files into your project:
+Ok, now copy files from this repository into your project:
 ```
 application/config/hybridauth.php
 application/libraries/Hybridauth.php
@@ -28,7 +28,7 @@ application/controllers/Hauth.php
 application/views/hauth
 ```
 
-OK, now let's put `http://<yourdomain.com>/index.php/hauth/window/<Provider ID>` as valid `Callback URL` in your provider application.
+Good, now let's put `http://<yourdomain.com>/index.php/hauth/window/<Provider ID>` as valid `Callback URL` in your provider application.
 
 _e.g for Facebook provider:_
 - go to `https://developers.facebook.com/apps/YOUR_APP/fb-login`
