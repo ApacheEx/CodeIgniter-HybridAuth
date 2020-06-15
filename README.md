@@ -28,7 +28,7 @@ application/controllers/Hauth.php
 application/views/hauth
 ```
 
-OK, now let's put `http://<yourdomain.com>/index.php/hauth/endpoint?hauth_done=<Provider ID>` as valid `Callback URL` in your provider application.
+OK, now let's put `http://<yourdomain.com>/index.php/hauth/window/<Provider ID>` as valid `Callback URL` in your provider application.
 
 _e.g for Facebook provider:_
 - go to `https://developers.facebook.com/apps/YOUR_APP/fb-login`
