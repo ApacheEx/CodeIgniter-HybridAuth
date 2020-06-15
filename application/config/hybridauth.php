@@ -17,7 +17,7 @@ $config['hybridauth'] = array(
 	'providers' => array(
 
 		'Twitter' => array(
-			'callback' => site_url('hauth/social/twitter'),
+			'callback' => site_url('hauth/window/twitter'),
 			'enabled' => TRUE,
 			'keys' => array(
 				'key' => '...',
